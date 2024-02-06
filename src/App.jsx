@@ -2,8 +2,7 @@ import './App.css'
 import Footer from "./components/Footer";
 import Navbar from './components/Navbar';
 import Sidebar from './components/Sidebar';
-
-
+import Perfumes from "./components/Perfumes"
 
 function App() {
  
@@ -12,6 +11,7 @@ function App() {
     <>
   <Navbar />
   <Sidebar />
+  <Perfumes />
   <Footer />
     </>
   )
