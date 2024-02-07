@@ -34,3 +34,22 @@ height: 40px;
 .delete-btn:hover{
   color: cornflowerblue;
 }
+
+.Header nav {
+  display: flex;
+  justify-content:center;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.Header nav a {
+  border :solid;
+  font-weight: bold;
+  padding: 0 1rem;
+  width: 70px;
+  height: 30px;
+}
+
+.Header nav a:hover {
+  color: cornflowerblue;
+}
