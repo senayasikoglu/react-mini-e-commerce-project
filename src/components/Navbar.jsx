@@ -1,6 +1,17 @@
-function Navbar(){
+import { NavLink } from "react-router-dom";
+
+function Navbar() {
     return (
-    <h1>This is e-commerce Name</h1>
+        <header>
+            <h1>Glow Essence</h1>
+            <nav>
+                <NavLink to="/">Home</NavLink>
+                <span>|</span>
+                <NavLink to="/sidebar">Sidebar</NavLink>
+                <span>|</span>
+                <NavLink to="/about">About</NavLink>
+            </nav>
+        </header>
     )
 }
 

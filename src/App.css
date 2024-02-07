@@ -3,6 +3,34 @@
   margin: 0 auto;
   padding: 2rem;
   text-align: center;
-  background-color: pink;
 }
 
+h1{
+  color: cornflowerblue;
+}
+
+.item-container{
+  display: flex;
+  flex-flow: row wrap;
+  gap: 1rem;
+}
+.perfume-item{
+  border: 1px cornflowerblue solid;
+  padding: 1rem;
+  width: 250px;
+}
+.item-title{
+  color: cornflowerblue;
+  font-size: 20px;
+}
+.item-img{
+  width: 200px;
+  height: 180px;
+}
+.delete-btn{
+width: 100px;
+height: 40px;
+}
+.delete-btn:hover{
+  color: cornflowerblue;
+}

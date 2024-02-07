@@ -1,10 +1,10 @@
-function Sidebar(){
-   return ( 
-    <>
-   <h2>Sidebar</h2>
-   <h3><a>Home</a></h3>
-   <h3><a>About</a></h3>
-   </>
+function Sidebar() {
+   return (
+      <>
+         <h2>Sidebar</h2>
+         <h3><a>Home</a></h3>
+         <h3><a>About</a></h3>
+      </>
    )
 }
 
