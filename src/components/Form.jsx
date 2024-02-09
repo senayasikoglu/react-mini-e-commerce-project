@@ -11,7 +11,6 @@ function createProduct() {
     props.addProduct({})
     e.preventDefault();
 
-    
 
     const newProduct = { productTitle, productBrand, productImage, price }
       
