@@ -1,6 +1,7 @@
 import { useState } from "react";
+import products from "../assets/products.json";
 
-function Form({ addProduct }) {
+function Form(props) {
 
   const [productTitle, setProductTitle] = useState("");
   const [productBrand, setProductBrand] = useState("");
@@ -10,12 +11,23 @@ function Form({ addProduct }) {
   const handleSubmit = (e) => {
     e.preventDefault();
 
+    const productIds = products.map( product => product.id);
+    const maxId = Math.max(...productIds);
+    const nextId = maxId + 1;
+
+    const newProduct = {
+      id: nextId,
+      title: productTitle,
+      brand: productBrand,
+      image: productImage,
+      price: parseFloat(price)
+    }
+
+    console.log(newProduct);
 
     //Create a new product object
-    const newProduct = { productTitle, productBrand, productImage, price: parseFloat(price) }
-
-
-    addProduct(newProduct);
+  
+    props.addProduct(newProduct);
 
     setProductTitle("");
     setProductBrand("");
@@ -26,7 +38,7 @@ function Form({ addProduct }) {
   return (
 
 
-    <form className="item-container" onSubmit={handleSubmit}>
+    <form className="product-item-container" onSubmit={handleSubmit}>
       <label>
         Product Title:
         <input name="productTitle" type="text" placeholder="Product Title"

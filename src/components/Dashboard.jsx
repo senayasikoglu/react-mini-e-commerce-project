@@ -12,8 +12,6 @@ function Dashboard() {
   const [productsToDisplay, setProductsToDisplay] = useState(fragances);
 
 
-
-
   //Logic to add a new product to current the product list
   const addProduct = (newProduct) => {
     setProductsToDisplay([...productsToDisplay, newProduct]);
@@ -52,7 +50,7 @@ function Dashboard() {
 
                 />) : (
                 <img className="item-img" alt="default image" src="https://img.freepik.com/premium-vector/default-image-icon-vector-missing-picture-page-website-design-mobile-app-no-photo-available_87543-11093.jpg?w=996" />
-              )};
+              )}
               <p>${perfumeDetails.price}</p>
 
               <button
