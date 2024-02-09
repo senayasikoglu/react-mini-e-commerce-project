@@ -1,13 +1,23 @@
 import { useState } from "react";
 import products from "../assets/products.json";
 import { Link } from "react-router-dom";
+import createProduct from "./Form";
 
 function Dashboard() {
   const fragances = products.filter(
     (product) =>
-      product.category === "fragrances" || product.category === "skincare" || product.category === "womens-watches" || product.category === "sunglasses"
+      product.category === "fragrances" || product.category === "skincare" || 
+      product.category === "womens-watches" || product.category === "sunglasses"
   );
   const [productsToDisplay, setProductsToDisplay] = useState(fragances);
+
+  const addProduct = () => {
+    
+
+    setProductsToDisplay();
+}
+
+
 
   let message = "";
   if (productsToDisplay.length === 0) {
@@ -22,6 +32,7 @@ function Dashboard() {
 
   return (
     <>
+    <Form addProduct={addProduct} />
       {message}
       <div className="item-container">
         {productsToDisplay.map((perfumeDetails) => {
