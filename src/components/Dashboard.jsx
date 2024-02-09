@@ -1,22 +1,23 @@
 import { useState } from "react";
 import products from "../assets/products.json";
 import { Link } from "react-router-dom";
-import createProduct from "./Form";
+import Form from "./Form";
 
 function Dashboard() {
   const fragances = products.filter(
     (product) =>
-      product.category === "fragrances" || product.category === "skincare" || 
+      product.category === "fragrances" || product.category === "skincare" ||
       product.category === "womens-watches" || product.category === "sunglasses"
   );
   const [productsToDisplay, setProductsToDisplay] = useState(fragances);
 
-  const addProduct = () => {
-    
 
-    setProductsToDisplay();
-}
 
+
+  //Logic to add a new product to current the product list
+  const addProduct = (newProduct) => {
+    setProductsToDisplay([...productsToDisplay, newProduct]);
+  }
 
 
   let message = "";
@@ -32,7 +33,7 @@ function Dashboard() {
 
   return (
     <>
-    <Form addProduct={addProduct} />
+
       {message}
       <div className="item-container">
         {productsToDisplay.map((perfumeDetails) => {
@@ -42,11 +43,16 @@ function Dashboard() {
                 <h2 className="item-title">{perfumeDetails.title}</h2>
               </Link>
               <p>{perfumeDetails.brand}</p>
-              <img
-                className="item-img"
-                alt="perfume image"
-                src={perfumeDetails.images[0]}
-              />
+
+              {perfumeDetails.images && perfumeDetails.images.length > 0 ? (
+                <img
+                  className="item-img"
+                  alt="perfume image"
+                  src={perfumeDetails.images[0]}
+
+                />) : (
+                <img className="item-img" alt="default image" src="https://img.freepik.com/premium-vector/default-image-icon-vector-missing-picture-page-website-design-mobile-app-no-photo-available_87543-11093.jpg?w=996" />
+              )};
               <p>${perfumeDetails.price}</p>
 
               <button
@@ -60,6 +66,7 @@ function Dashboard() {
             </div>
           );
         })}
+        <Form addProduct={addProduct} />
       </div>
     </>
   );

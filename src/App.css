@@ -53,3 +53,7 @@ height: 40px;
 .Header nav a:hover {
   color: cornflowerblue;
 }
+.add-form{
+  display: flex;
+  flex-direction: column;
+}
