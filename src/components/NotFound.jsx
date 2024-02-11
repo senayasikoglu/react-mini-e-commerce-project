@@ -1,9 +1,8 @@
 
 function NotFound() {
     return (
-        <span>
-            This page doesn't exist
-        </span>
+        <img src="./src/assets/404_page_cover.jpg" />
+
     )
 }
 export default NotFound;
