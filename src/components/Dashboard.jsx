@@ -2,6 +2,7 @@ import { useState } from "react";
 import products from "../assets/products.json";
 import { Link } from "react-router-dom";
 import AddForm from "./AddForm";
+import ItemDetails from "./ItemDetails";
 
 function Dashboard() {
   const fragances = products.filter(
@@ -53,6 +54,11 @@ function Dashboard() {
               )}
               <p>${perfumeDetails.price}</p>
 
+              <Link to={`/itemDetails/${perfumeDetails.id}/edit`}>
+                <button className="delete-btn">
+                  Edit
+                </button>
+              </Link>
               <button
                 className="delete-btn"
                 onClick={() => {
@@ -61,6 +67,7 @@ function Dashboard() {
               >
                 Delete
               </button>
+
             </div>
           );
         })}

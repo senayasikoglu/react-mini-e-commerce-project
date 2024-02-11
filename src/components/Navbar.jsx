@@ -11,22 +11,19 @@ function Navbar() {
   return (
     <>
       <h1>Glow Essence</h1>
+      <div className="menu-container">
 
-      <header className="header">
-        <button className="menu-icon" onClick={toggleSidebar}>
-          {!isNavClicked && (
-            <span className="material-symbols-outlined">
-              menu
-            </span>
+        <div className="menu">
+          <span className="material-symbols-outlined" onClick={toggleSidebar}>Menu
+          </span>
+          {isNavClicked && (
+            <nav className="navbar">
+              <NavLink to="/">Home</NavLink>
+              <NavLink to="/about">About</NavLink>
+            </nav>
           )}
-        </button>
-        {isNavClicked && (
-          <nav className="navbar">
-            <NavLink to="/">Home</NavLink>
-            <NavLink to="/about">About</NavLink>
-          </nav>
-        )}
-      </header>
+        </div>
+      </div>
     </>
   );
 }

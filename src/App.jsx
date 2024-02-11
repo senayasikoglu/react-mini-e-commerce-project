@@ -6,6 +6,7 @@ import About from "./components/About";
 import Dashboard from './components/Dashboard';
 import ItemDetails from "./components/ItemDetails";
 import NotFound from "./components/NotFound";
+import EditItemDetails from './components/EditItemDetails';
 
 
 function App() {
@@ -19,6 +20,7 @@ function App() {
         <Route path="/" element={<Dashboard />} />
         <Route path="/about" element={<About />} />
         <Route path="/itemdetails/:itemId" element={<ItemDetails />} />
+        <Route path="/itemdetails/:itemId/edit" element={<EditItemDetails />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
 
