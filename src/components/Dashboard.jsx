@@ -1,7 +1,7 @@
 import { useState } from "react";
 import products from "../assets/products.json";
 import { Link } from "react-router-dom";
-import Form from "./Form";
+import AddForm from "./AddForm";
 
 function Dashboard() {
   const fragances = products.filter(
@@ -64,8 +64,8 @@ function Dashboard() {
             </div>
           );
         })}
-        <Form addProduct={addProduct} />
       </div>
+      <AddForm addProduct={addProduct} />
     </>
   );
 }
