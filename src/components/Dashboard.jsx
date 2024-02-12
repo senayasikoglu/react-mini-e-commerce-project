@@ -1,37 +1,24 @@
 import { useState } from "react";
-import products from "../assets/products.json";
 import { Link } from "react-router-dom";
 import AddForm from "./AddForm";
 import ItemDetails from "./ItemDetails";
 
-function Dashboard() {
-  const beautyProducts = products.filter(
-    (product) =>
-      product.category === "fragrances" || product.category === "skincare" ||
-      product.category === "womens-watches" || product.category === "sunglasses"
-  );
-
-  const [productsToDisplay, setProductsToDisplay] = useState(beautyProducts);
-
-  0
+function Dashboard({addProduct,deleteProduct,productsToDisplay}) {
+  
 
 
-  //Logic to add a new product to current the product list
-  const addProduct = (newProduct) => {
-    setProductsToDisplay([...productsToDisplay, newProduct]);
+
+
+  const updateProduct = (updatedProduct) => {
+    //productsToDisplay.find(product => product.id === updateProduct.id ) = updatedProduct;
   }
 
+  
   //Delete a product
   let message = "";
   if (productsToDisplay.length === 0) {
     message = <h2>Sorry, there are no products to display</h2>;
   }
-  const deleteProduct = (productId) => {
-    const newList = productsToDisplay.filter((productObj) => {
-      return productObj.id !== productId;
-    });
-    setProductsToDisplay(newList);
-  };
 
   return (
     <>
@@ -57,7 +44,6 @@ function Dashboard() {
               )}
               <p>${productDetails.price}</p>
               <Link to={`/itemDetails/${productDetails.id}`}>Show details</Link>
-
               <br />
 
               <button

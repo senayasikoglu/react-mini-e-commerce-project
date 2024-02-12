@@ -1,9 +1,8 @@
-import products from "../assets/products.json";
 import { useState } from "react";
 import { useParams } from "react-router-dom";
 import { Link } from "react-router-dom";
 
-function ItemDetails() {
+function ItemDetails({products,updateProduct}) {
   const { itemId } = useParams();
 
 
@@ -11,20 +10,26 @@ function ItemDetails() {
   const [editedItem, setEditedItem] = useState(null);
   const [updatedProducts, setUpdatedProducts] = useState([]);
 
-
-  const itemDetails = products.find((product) => {
+ 
+  let foundItem = products.find((product) => {
     return product.id == itemId;
   });
 
+  const [selectedItem, setSelectedItem] = useState(foundItem);
+
+
   const handleEdit = () => {
     setIsEditing(true);
-    setEditedItem({ ...itemDetails })
+    setEditedItem(selectedItem)
   }
 
   const handleUpdate = (e) => {
     e.preventDefault();
     setIsEditing(false);
+    setSelectedItem(editedItem);
+    updateProduct(editedItem);  //calling from parent
     setEditedItem(null);
+
   };
 
   //Handle Input changes
@@ -44,28 +49,28 @@ function ItemDetails() {
             type="text"
             name="title"
             value={editedItem ? editedItem.title : ""}
-            placeholder={itemDetails.title}
+            placeholder={selectedItem.title}
             onChange={handleChange}
           />
           <input
             type="number"
             name="price"
             value={editedItem ? editedItem.price : ""}
-            placeholder={itemDetails.price}
+            placeholder={selectedItem.price}
             onChange={handleChange}
           />
           <input
             type="text"
             name="description"
             value={editedItem ? editedItem.description : ""}
-            placeholder={itemDetails.description}
+            placeholder={selectedItem.description}
             onChange={handleChange}
           />
           <input
             type="number"
             name="rating"
             value={editedItem ? editedItem.rating : ""}
-            placeholder={itemDetails.rating}
+            placeholder={selectedItem.rating}
             onChange={handleChange}
           />
           <button className="edit-btn">Save</button>
@@ -73,13 +78,13 @@ function ItemDetails() {
         </form>
       ) : (
         <>
-          <h1>{editedItem ? editedItem.title : itemDetails.title}</h1>
+          <h1>{editedItem ? editedItem.title : selectedItem.title}</h1>
 
-          <img src={itemDetails.thumbnail} />
-          <h3>Price: {itemDetails.price}</h3>
-          <h3>Discount: {itemDetails.discountPercentage}</h3>
-          <h3>Description: {itemDetails.description}</h3>
-          <h3>Rating: {itemDetails.rating}</h3>
+          <img src={selectedItem.thumbnail} />
+          <h3>Price: {selectedItem.price}</h3>
+          <h3>Discount: {selectedItem.discountPercentage}</h3>
+          <h3>Description: {selectedItem.description}</h3>
+          <h3>Rating: {selectedItem.rating}</h3>
 
           <button className="edit-btn" onClick={handleEdit}>
             Edit
