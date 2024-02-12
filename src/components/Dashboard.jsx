@@ -5,12 +5,15 @@ import AddForm from "./AddForm";
 import ItemDetails from "./ItemDetails";
 
 function Dashboard() {
-  const fragances = products.filter(
+  const beautyProducts = products.filter(
     (product) =>
       product.category === "fragrances" || product.category === "skincare" ||
       product.category === "womens-watches" || product.category === "sunglasses"
   );
-  const [productsToDisplay, setProductsToDisplay] = useState(fragances);
+
+  const [productsToDisplay, setProductsToDisplay] = useState(beautyProducts);
+
+  0
 
 
   //Logic to add a new product to current the product list
@@ -18,10 +21,10 @@ function Dashboard() {
     setProductsToDisplay([...productsToDisplay, newProduct]);
   }
 
-
+  //Delete a product
   let message = "";
   if (productsToDisplay.length === 0) {
-    message = <h2>Sorry, no more products to display!</h2>;
+    message = <h2>Sorry, there are no products to display</h2>;
   }
   const deleteProduct = (productId) => {
     const newList = productsToDisplay.filter((productObj) => {
@@ -35,34 +38,32 @@ function Dashboard() {
 
       {message}
       <div className="item-container">
-        {productsToDisplay.map((perfumeDetails) => {
+        {productsToDisplay.map((productDetails) => {
           return (
-            <div key={perfumeDetails.id} className="perfume-item">
-              <Link to={`/itemDetails/${perfumeDetails.id}`}>
-                <h2 className="item-title">{perfumeDetails.title}</h2>
+            <div key={productDetails.id} className="perfume-item">
+              <Link to={`/itemDetails/${productDetails.id}`}>
+                <h2 className="item-title">{productDetails.title}</h2>
               </Link>
-              <p>{perfumeDetails.brand}</p>
+              <p>{productDetails.brand}</p>
 
-              {perfumeDetails.images && perfumeDetails.images.length > 0 ? (
+              {productDetails.images && productDetails.images.length > 0 ? (
                 <img
                   className="item-img"
                   alt="perfume image"
-                  src={perfumeDetails.images[0]}
+                  src={productDetails.images[0]}
 
                 />) : (
                 <img className="item-img" alt="default image" src="https://img.freepik.com/premium-vector/default-image-icon-vector-missing-picture-page-website-design-mobile-app-no-photo-available_87543-11093.jpg?w=996" />
               )}
-              <p>${perfumeDetails.price}</p>
+              <p>${productDetails.price}</p>
+              <Link to={`/itemDetails/${productDetails.id}`}>Show details</Link>
 
-              <Link to={`/itemDetails/${perfumeDetails.id}/edit`}>
-                <button className="delete-btn">
-                  Edit
-                </button>
-              </Link>
+              <br />
+
               <button
                 className="delete-btn"
                 onClick={() => {
-                  deleteProduct(perfumeDetails.id);
+                  deleteProduct(productDetails.id);
                 }}
               >
                 Delete

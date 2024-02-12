@@ -65,7 +65,7 @@ gap:2px;
   width: 200px;
   height: 180px;
 }
-.delete-btn{
+.delete-btn, .edit-btn{
 width: 100px;
 height: 40px;
 }
@@ -126,4 +126,8 @@ input{
   margin-top: 20px;
   margin-bottom: 20px;
  
+}
+.footer{
+margin-top: 50px;
+
 }
