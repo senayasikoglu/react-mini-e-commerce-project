@@ -1,5 +1,5 @@
 #root {
-  width: 95%;
+  width: 100%;
   margin: 0;
   padding: 2rem;
   text-align: center;
@@ -10,7 +10,7 @@ a{
   }
 .main-title{
   background-color: cornflowerblue;
-  color: whitesmoke
+  color: whitesmoke;
 }
 .navbar{
 display: flex;
@@ -42,37 +42,60 @@ gap:2px;
   color: cornflowerblue;
   
 }
-.header nav a:hover{
+.menu-container a:hover{
   color: navy;
 }
 .item-container{
   margin: 120px;
   display: flex;
   flex-flow: row wrap;
-  gap: 1rem;
+  gap: 3rem;
 }
 .perfume-item{
   border: 1px cornflowerblue solid;
   padding: 1rem;
-  width: 250px;
+  width: 270px;
 
 }
 .item-title{
   color: cornflowerblue;
-  font-size: 20px;
+  font-size: 25px;
 }
-
+.img-detail{
+  width: 300px;
+  height: 350px;
+}
+.brand{
+  color: black;
+}
 .item-img{
   width: 200px;
   height: 200px;
 }
-
+.details-text{
+font-size: 15px;
+}
 .add-form{
   display: flex;
   flex-direction: column;
   
 }
-
+.edit-form{
+  width: 500px;
+  margin: 0 auto;
+  font-size: 15px;
+  font-weight: bold;
+}
+.save-btn{
+  width: 80px;
+  margin: 0 auto;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+.item-details{
+  margin-top: 50px;
+  margin-bottom: 150px;
+}
 .menu-icon {
   width: 50px; 
   height: 30px; 
@@ -152,6 +175,23 @@ margin-top: 50px;
   background-image: linear-gradient(to bottom, #3cb0fd, #3498db);
   text-decoration: none;
 }
+.btn-back {
+  -webkit-border-radius: 28;
+  -moz-border-radius: 28;
+  border-radius: 28px;
+  font-family: Arial;
+  color: #000a0d;
+  font-size: 12px;
+  background: #eff4f7;
+  padding: 10px 20px 10px 20px;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.btn-back:hover {
+  background: #97c9e8;
+  text-decoration: none;
+}
 .details{
   margin-right: 5px;
 }
@@ -165,3 +205,4 @@ margin-top: 50px;
   width: 120px;
   margin: 20px;
 }
+

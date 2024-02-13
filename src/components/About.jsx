@@ -1,25 +1,20 @@
 function About() {
     return (
         <>
-            <h2>React App Project:</h2>
-            <p>Mini project build during Ironhack bootcamp</p>
-            <div className="list-container">
-                <ul className="about-list">
-                    <li>Senay Asikoglu</li>
-                    <li></li>
-                    <a href="https://github.com/senayasikoglu" target="blank"><li>GitHub</li></a>
-                    <li>LinkedIn:</li>
 
-                </ul>
-            </div>
+            <h3>This is a mini React app project, part of Ironhack's Web Dev bootcamp</h3>
+            <h4>Built by [ future ] Full Stack developers 👩‍💻 :</h4>
             <div>
-                <ul className="about-list">
-                    <li>Lucía Marconi</li>
-                    <li></li>
-                    <a href="https://github.com/Lumarconi21" target="blank"><li>GitHub</li></a>
-                    <li>LinkedIn:</li>
-                </ul>
-            </div>
+                <h4>Senay Asikoglu</h4>
+                <h5><a href="https://github.com/senayasikoglu" target="blank">GitHub</a></h5>
+            </div >
+            <div>
+
+                <h4>Lucía Marconi</h4>
+                <h5><a href="https://github.com/Lumarconi21" target="blank">GitHub</a></h5>
+
+
+            </div >
         </>
     )
 }

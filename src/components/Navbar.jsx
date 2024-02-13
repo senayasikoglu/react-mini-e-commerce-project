@@ -11,7 +11,7 @@ function Navbar() {
   return (
     <>
       <div className="main-title">
-        <h1>Glow Essence</h1>
+        <h1>GLOW ESSENCE</h1>
         <h3>Shop online</h3>
       </div>
       <div className="menu-container">

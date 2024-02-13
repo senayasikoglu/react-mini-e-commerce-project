@@ -44,7 +44,7 @@ function ItemDetails({ products, updateProduct }) {
   return (
     <section className="item-details">
       {isEditing ? (
-        <form onSubmit={handleUpdate}>
+        <form className="edit-form" onSubmit={handleUpdate}>
           <label>
             Title:</label>
           <input
@@ -66,7 +66,7 @@ function ItemDetails({ products, updateProduct }) {
           />
 
           <label>Description:</label>
-          <input
+          <textarea
             type="text"
             name="description"
             value={editedItem ? editedItem.description : ""}
@@ -75,7 +75,7 @@ function ItemDetails({ products, updateProduct }) {
           />
 
           <label>Rating:</label>
-          <textarea
+          <input
             type="number"
             name="rating"
             value={editedItem ? editedItem.rating : ""}
@@ -83,28 +83,27 @@ function ItemDetails({ products, updateProduct }) {
             onChange={handleChange}
           />
 
-          <button className="edit btn">Save</button>
-          <Link to={`/itemDetails/${itemId}`}>Cancel</Link>
+          <button className="save-btn btn">Save</button>
         </form>
       ) : (
-        <>
-          <h1>{editedItem ? editedItem.title : selectedItem.title}</h1>
+        <div>
+          <h1 className="item-title">{editedItem ? editedItem.title : selectedItem.title}</h1>
+          <h3 className="brand">{selectedItem.brand}</h3>
 
-          <img src={selectedItem.thumbnail} />
-          <h3>Price: {selectedItem.price}</h3>
-          <h3>Discount: {selectedItem.discountPercentage}</h3>
-          <h3>Description: {selectedItem.description}</h3>
-          <h3>Rating: {selectedItem.rating}</h3>
+          <img className="img-detail" src={selectedItem.images[1]} />
+          <h3 className="details-text">${selectedItem.price}</h3>
+          <h3 className="details-text">{selectedItem.description}</h3>
+          <h5>Rating ★ {selectedItem.rating}</h5>
 
           <button className="edit btn" onClick={handleEdit}>
             Edit Product
           </button>
-        </>
+        </div>
       )}
-      <br />
 
 
-      <Link to="/">Back to Homepage</Link>
+
+      <Link to="/"><button className="btn-back">Back to Homepage</button></Link>
     </section>
   );
 }
