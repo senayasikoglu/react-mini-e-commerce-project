@@ -13,9 +13,9 @@ import { useState } from "react";
 
 function App() {
 
- //I moved productlist initialization from Dashboard to here (moved to parent). 
- //Otherwise, we can not pass the "productstodisplay" to itemdetails router page (because they are siblings)
- //(In short, to be able to display editted item on the actual list, I did this change :)
+  //I moved productlist initialization from Dashboard to here (moved to parent). 
+  //Otherwise, we can not pass the "productstodisplay" to itemdetails router page (because they are siblings)
+  //(In short, to be able to display editted item on the actual list, I did this change :)
 
   const beautyProducts = products.filter(
     (product) =>
@@ -25,14 +25,14 @@ function App() {
 
   const [productsToDisplay, setProductsToDisplay] = useState(beautyProducts);
 
-  
+
   const updateProduct = (editedItem) => {
     console.log("updateProduct method....");
-    let index = productsToDisplay.findIndex(product => product.id === editedItem.id );
+    let index = productsToDisplay.findIndex(product => product.id === editedItem.id);
 
     let newList = productsToDisplay;
 
-    newList[index] = editedItem; 
+    newList[index] = editedItem;
     setProductsToDisplay(newList);
   }
 
@@ -44,22 +44,22 @@ function App() {
     setProductsToDisplay(newList);
   };
 
-    //Logic to add a new product to current the product list
-    const addProduct = (newProduct) => {
-      setProductsToDisplay([...productsToDisplay, newProduct]);
-    }
+  //Logic to add a new product to current the product list
+  const addProduct = (newProduct) => {
+    setProductsToDisplay([...productsToDisplay, newProduct]);
+  }
 
   return (
     <>
       <Navbar />
 
       <Routes>
-        <Route path="/" element={<Dashboard productsToDisplay={productsToDisplay} 
-                                            deleteProduct={deleteProduct}
-                                            addProduct={addProduct}  />} />
+        <Route path="/" element={<Dashboard productsToDisplay={productsToDisplay}
+          deleteProduct={deleteProduct}
+          addProduct={addProduct} />} />
         <Route path="/about" element={<About />} />
-         <Route path="/itemdetails/:itemId"
-          element={<ItemDetails updateProduct={updateProduct} products={productsToDisplay} />}  />
+        <Route path="/itemdetails/:itemId"
+          element={<ItemDetails updateProduct={updateProduct} products={productsToDisplay} />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
 

@@ -90,11 +90,11 @@ function ItemDetails({ products, updateProduct }) {
           <h1 className="item-title">{editedItem ? editedItem.title : selectedItem.title}</h1>
           <h3 className="brand">{selectedItem.brand}</h3>
           {selectedItem.images.length > 1 ? (
-          <img className="img-detail" src={ selectedItem.images[1]} />
-          ) : (<img className="img-detail" src={ selectedItem.images[0]}  />)}
+            <img className="img-detail" src={selectedItem.images[1]} />
+          ) : (<img className="img-detail" src={selectedItem.images[0]} />)}
           <h3 className="details-text">${selectedItem.price}</h3>
           <h3 className="details-text">{selectedItem.description}</h3>
-          <h5>Rating ★ {selectedItem.rating}</h5>
+          <h5 className="details-text">Rating ★ {selectedItem.rating}</h5>
 
           <button className="edit btn" onClick={handleEdit}>
             Edit Product
