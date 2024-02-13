@@ -3,8 +3,8 @@ import { Link } from "react-router-dom";
 import AddForm from "./AddForm";
 import ItemDetails from "./ItemDetails";
 
-function Dashboard({addProduct,deleteProduct,productsToDisplay}) {
-  
+function Dashboard({ addProduct, deleteProduct, productsToDisplay }) {
+
 
 
 
@@ -13,7 +13,7 @@ function Dashboard({addProduct,deleteProduct,productsToDisplay}) {
     //productsToDisplay.find(product => product.id === updateProduct.id ) = updatedProduct;
   }
 
-  
+
   //Delete a product
   let message = "";
   if (productsToDisplay.length === 0) {
@@ -37,17 +37,17 @@ function Dashboard({addProduct,deleteProduct,productsToDisplay}) {
                 <img
                   className="item-img"
                   alt="perfume image"
-                  src={productDetails.images[0]}
+                  src={productDetails.images[1]}
 
                 />) : (
                 <img className="item-img" alt="default image" src="https://img.freepik.com/premium-vector/default-image-icon-vector-missing-picture-page-website-design-mobile-app-no-photo-available_87543-11093.jpg?w=996" />
               )}
               <p>${productDetails.price}</p>
-              <Link to={`/itemDetails/${productDetails.id}`}>Show details</Link>
-              <br />
+              <Link to={`/itemDetails/${productDetails.id}`}><button className="btn details">Show details</button></Link>
+
 
               <button
-                className="delete-btn"
+                className="delete btn"
                 onClick={() => {
                   deleteProduct(productDetails.id);
                 }}
@@ -59,7 +59,7 @@ function Dashboard({addProduct,deleteProduct,productsToDisplay}) {
           );
         })}
       </div>
-      <AddForm addProduct={addProduct} />
+      <AddForm addProduct={addProduct}>Add a product</AddForm>
     </>
   );
 }
