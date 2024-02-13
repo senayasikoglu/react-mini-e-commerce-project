@@ -63,7 +63,7 @@ function AddForm(props) {
             value={price} onChange={(e) => { setPrice(e.target.value) }} />
         </label>
 
-        <button className="submit-btn" type="submit">Add Product</button>
+        <button className="btn submit" type="submit">Add Product</button>
 
 
       </form>
