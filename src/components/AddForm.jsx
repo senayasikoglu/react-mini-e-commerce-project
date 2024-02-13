@@ -19,7 +19,7 @@ function AddForm(props) {
       id: nextId,
       title: productTitle,
       brand: productBrand,
-      image: productImage,
+      images: [productImage],
       price: parseFloat(price)
     }
 
@@ -40,7 +40,7 @@ function AddForm(props) {
       <h3>Add a new product</h3>
       <form className="product-item-container" onSubmit={handleSubmit}>
         <label>
-          <span>Title:</span>
+          <span>Title   :</span>
           <input name="productTitle" type="text" placeholder="Product Title"
             value={productTitle} onChange={(e) => { setProductTitle(e.target.value) }} />
         </label>
@@ -58,7 +58,7 @@ function AddForm(props) {
         </label>
 
         <label>
-          <span>Price:</span>
+          <span>Price :</span>
           <input name="price" type="number" placeholder="price"
             value={price} onChange={(e) => { setPrice(e.target.value) }} />
         </label>

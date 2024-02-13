@@ -33,7 +33,7 @@ function Dashboard({ addProduct, deleteProduct, productsToDisplay }) {
                 <img
                   className="item-img"
                   alt="perfume image"
-                  src={productDetails.images[1]}
+                  src={productDetails.images[0]}
 
                 />) : (
                 <img className="item-img" alt="default image" src="https://img.freepik.com/premium-vector/default-image-icon-vector-missing-picture-page-website-design-mobile-app-no-photo-available_87543-11093.jpg?w=996" />
