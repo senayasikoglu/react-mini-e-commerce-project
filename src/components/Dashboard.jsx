@@ -2,15 +2,10 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import AddForm from "./AddForm";
 import ItemDetails from "./ItemDetails";
+import { FaTrashCan } from "react-icons/fa6";
 
 function Dashboard({ addProduct, deleteProduct, productsToDisplay }) {
 
-
-  const updateProduct = (updatedProduct) => {
-    //productsToDisplay.find(product => product.id === updateProduct.id ) = updatedProduct;
-  }
-
-  //Delete a product
   let message = "";
   if (productsToDisplay.length === 0) {
     message = <h2>Sorry, there are no products to display</h2>;
@@ -39,18 +34,19 @@ function Dashboard({ addProduct, deleteProduct, productsToDisplay }) {
                 <img className="item-img" alt="default image" src="https://img.freepik.com/premium-vector/default-image-icon-vector-missing-picture-page-website-design-mobile-app-no-photo-available_87543-11093.jpg?w=996" />
               )}
               <p>${productDetails.price}</p>
-              <Link to={`/itemDetails/${productDetails.id}`}><button className="btn details">Show details</button></Link>
+              <div className="btn-container">
+                {/* <Link to={`/itemDetails/${productDetails.id}`} className="view">View</Link> */}
 
 
-              <button
-                className="delete btn"
-                onClick={() => {
-                  deleteProduct(productDetails.id);
-                }}
-              >
-                Delete
-              </button>
-
+                <button
+                  className="trash"
+                  onClick={() => {
+                    deleteProduct(productDetails.id);
+                  }}
+                >
+                  <FaTrashCan />
+                </button>
+              </div>
             </div>
           );
         })}
