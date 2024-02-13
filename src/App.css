@@ -1,7 +1,6 @@
 #root {
   width: 100%;
   margin: 0;
-  padding: 2rem;
   text-align: center;
   box-sizing: border-box;
 }
@@ -9,7 +8,13 @@ a{
   text-decoration: none;
   }
 .main-title{
-  background-color: cornflowerblue;
+  background: radial-gradient(blue, cornflowerblue) ;
+  height: 180px;
+  width: 95vw;
+  margin: 0 auto;;
+  margin-top: 0px;
+  padding-top: 50px;
+ border-radius: 10px;
   color: whitesmoke;
 }
 .navbar{
@@ -19,11 +24,10 @@ gap: 1rem;
 }
 
 .menu-container{
-  position:fixed;
-  top:6;
-  right:3;
+  position: absolute;
+  margin: 50px;
   cursor: pointer;
- color: cornflowerblue;
+  color: cornflowerblue;
 
 }
 
@@ -40,21 +44,37 @@ gap:2px;
   font-weight: bold;
   font-size: 15px;
   color: cornflowerblue;
+ 
   
 }
 .menu-container a:hover{
   color: navy;
 }
 .item-container{
-  margin: 120px;
   display: flex;
   flex-flow: row wrap;
-  gap: 3rem;
+  justify-content: center;
+  gap: 4rem;
+  margin: 60px;
 }
 .perfume-item{
+  text-decoration: none;
   border: 1px cornflowerblue solid;
+  border-radius: 15px;
   padding: 1rem;
   width: 270px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  
+  box-shadow:  0px 15px 15px rgb(164, 187, 229);
+
+}
+
+.perfume-item:hover{
+  scale:1.1;
+  transition: all;
+  transition-duration: 300ms;
 
 }
 .item-title{
@@ -71,6 +91,7 @@ gap:2px;
 .item-img{
   width: 200px;
   height: 200px;
+  margin: 0 auto;
 }
 .details-text{
 font-size: 15px;
@@ -148,18 +169,29 @@ margin-top: 50px;
 .about-list{
   list-style-type: none;
 }
+.btn-container{
+  display: flex;
+  justify-content: flex-end;
+  margin-right: 15px;
+  margin-top: 10px
+}
+.trash{
+  font-size: 25px;
+  background-color: white;
+  border: none;
+  cursor: pointer;
+}
+.trash:hover{
+  color: tomato;
+}
+
 .btn {
-  background: #3498db;
-  background-image: -webkit-linear-gradient(top, #3498db, #2980b9);
-  background-image: -moz-linear-gradient(top, #3498db, #2980b9);
-  background-image: -ms-linear-gradient(top, #3498db, #2980b9);
-  background-image: -o-linear-gradient(top, #3498db, #2980b9);
-  background-image: linear-gradient(to bottom, #3498db, #2980b9);
+  background-color: white;
   -webkit-border-radius: 19;
   -moz-border-radius: 19;
   border-radius: 19px;
   font-family: Arial;
-  color: #ffffff;
+  color: black;
   font-size: 15px;
   padding: 10px;
   text-decoration: none;
@@ -197,9 +229,7 @@ margin-top: 50px;
 }
 .submit{
   width: fit-content;
-  margin: 0 auto;
-  margin-top: 20px;
-  margin-bottom: 20px;
+  margin: 20px auto;
 }
 .edit{
   width: 120px;
