@@ -6,13 +6,9 @@ import ItemDetails from "./ItemDetails";
 function Dashboard({ addProduct, deleteProduct, productsToDisplay }) {
 
 
-
-
-
   const updateProduct = (updatedProduct) => {
     //productsToDisplay.find(product => product.id === updateProduct.id ) = updatedProduct;
   }
-
 
   //Delete a product
   let message = "";

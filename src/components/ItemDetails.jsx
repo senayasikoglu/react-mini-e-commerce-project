@@ -90,7 +90,8 @@ function ItemDetails({ products, updateProduct }) {
           <h1 className="item-title">{editedItem ? editedItem.title : selectedItem.title}</h1>
           <h3 className="brand">{selectedItem.brand}</h3>
 
-          <img className="img-detail" src={selectedItem.images[1]} />
+          <img className="img-detail" src={selectedItem.images} />
+          console.log(selectedItem.images)
           <h3 className="details-text">${selectedItem.price}</h3>
           <h3 className="details-text">{selectedItem.description}</h3>
           <h5>Rating ★ {selectedItem.rating}</h5>
