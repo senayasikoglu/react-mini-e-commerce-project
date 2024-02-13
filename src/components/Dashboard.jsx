@@ -21,7 +21,7 @@ function Dashboard({ addProduct, deleteProduct, productsToDisplay }) {
             <div key={productDetails.id} className="perfume-item">
               <Link to={`/itemDetails/${productDetails.id}`}>
                 <h2 className="item-title">{productDetails.title}</h2>
-              </Link>
+              
               <p>{productDetails.brand}</p>
 
               {productDetails.images && productDetails.images.length > 0 ? (
@@ -34,6 +34,7 @@ function Dashboard({ addProduct, deleteProduct, productsToDisplay }) {
                 <img className="item-img" alt="default image" src="https://img.freepik.com/premium-vector/default-image-icon-vector-missing-picture-page-website-design-mobile-app-no-photo-available_87543-11093.jpg?w=996" />
               )}
               <p>${productDetails.price}</p>
+              </Link>
               <div className="btn-container">
                 {/* <Link to={`/itemDetails/${productDetails.id}`} className="view">View</Link> */}
 
