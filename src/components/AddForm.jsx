@@ -20,7 +20,7 @@ function AddForm(props) {
       id: nextId,
       title: productTitle,
       brand: productBrand,
-      images: productImage,
+      images: [productImage],
       price: parseFloat(price)
     }
 
