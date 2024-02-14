@@ -1,6 +1,6 @@
 import { useState } from "react";
 import products from "../assets/products.json";
-import { BiAddToQueue } from "react-icons/bi";
+
 
 function AddForm(props) {
 
@@ -20,11 +20,11 @@ function AddForm(props) {
       id: nextId,
       title: productTitle,
       brand: productBrand,
-      images: [productImage],
+      images: productImage,
       price: parseFloat(price)
     }
 
-    console.log(newProduct);
+
 
     //Create a new product object
 
